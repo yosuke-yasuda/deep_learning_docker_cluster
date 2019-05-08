@@ -1,5 +1,10 @@
 # This is docker template for deep learning project
 
+## System Requirements
+
+* [Install docker-compose](https://docs.docker.com/compose/install/)
+
+
 ## Containers
 
 ### jupyter_keras_2_2_4_cpu
