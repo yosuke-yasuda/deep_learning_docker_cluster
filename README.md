@@ -3,7 +3,7 @@
 ## System Requirements
 
 * [Install docker-compose](https://docs.docker.com/compose/install/)
-
+* [Install nvidia-docker](https://github.com/NVIDIA/nvidia-docker) (only for gpu usage)
 
 ## Containers
 
