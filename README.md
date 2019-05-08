@@ -22,7 +22,7 @@ jupyter container for PyTorch 1.0.0
 $ docker-compose up jupyter_pytorch_1_0_0_gpu
 ```
 
-Access http://localhost:8888/
+Access http://localhost:28888/
 
 See pytorch_1_0_0_gpu_example.ipynb to see an example
 
