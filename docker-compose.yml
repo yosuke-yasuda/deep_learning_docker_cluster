@@ -1,6 +1,14 @@
 version: "2.3"
 
 services:
+  flask_keras_2_2_4_cpu:
+    build: flask_keras_2_2_4_cpu
+    ports:
+      - 5000:5000
+    volumes:
+      - ./:/shared
+    working_dir: /shared/flask_keras_2_2_4_cpu
+    command: python app.py
   jupyter_keras_2_2_4_cpu:
     build: jupyter_keras_2_2_4_cpu
     volumes:

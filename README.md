@@ -7,6 +7,22 @@
 
 ## Containers
 
+
+### flask_keras_2_2_4_cpu
+
+flask api container for Keras 2.2.4
+
+```
+$ docker-compose up flask_keras_2_2_4_cpu
+```
+
+In different shell window, 
+
+```
+$ curl -F "img=@./data/sample/gu/gu1.jpg" http://localhost:5000/images
+{"result":1.0,"success":true}
+```
+
 ### jupyter_keras_2_2_4_cpu
 
 jupyter container for Keras 2.2.4
