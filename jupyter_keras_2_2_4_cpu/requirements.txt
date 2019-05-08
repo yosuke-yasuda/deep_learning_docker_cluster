@@ -1,2 +1,4 @@
 jupyter==1.0.0
-Keras==2.4.4
+Pillow==6.0.0
+tensorflow==1.9.0
+Keras==2.2.4

@@ -7,8 +7,9 @@ services:
       - ./:/shared
     ports:
       - 8888:8888
-    command: bash -c "cd /shared && jupyter notebook --ip=0.0.0.0 --allow-root"
-  jupyter_pytorch_gpu:
+    working_dir: /shared/notebook
+    command: jupyter notebook --ip=0.0.0.0 --allow-root --NotebookApp.token=''
+  jupyter_pytorch_1_0_0_gpu:
     build: jupyter_pytorch_1_0_0_gpu
     runtime: nvidia
     environment:
@@ -16,7 +17,7 @@ services:
       - NVIDIA_VISIBLE_DEVICES=all
     volumes:
       - ./:/shared
-    command: bash -c "cd /shared && jupyter notebook --ip=0.0.0.0 --allow-root"
+    command: bash -c "cd /shared/notebook && jupyter notebook --ip=0.0.0.0 --allow-root --NotebookApp.token=''"
   train_keras_2_2_4_cpu:
     build: train_keras_2_2_4_cpu
     volumes:
