@@ -36,7 +36,7 @@ See pytorch_1_0_0_gpu_example.ipynb to see an example
 training container example for Keras 2.2.4
 
 ```
-$ docker-compose up jupyter_keras_2_2_4_cpu
+$ docker-compose up train_keras_2_2_4_cpu
 ```
 
 ### train_keras_2_2_4_gpu
@@ -44,5 +44,5 @@ $ docker-compose up jupyter_keras_2_2_4_cpu
 training gpu container example for Keras 2.2.4
 
 ```
-$ docker-compose up jupyter_keras_2_2_4_gpu
+$ docker-compose up train_keras_2_2_4_gpu
 ```
