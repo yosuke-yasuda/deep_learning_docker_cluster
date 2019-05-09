@@ -7,19 +7,6 @@
 
 ## Containers
 
-### nginx
-
-nginx container to deploy application to web server
-
-```
-$ docker-compose up nginx
-```
-
-```
-$ curl -F "img=@./data/sample/gu/gu1.jpg" http://localhost/images
-{"result":1.0,"success":true}
-```
-
 ### flask_keras_2_2_4_cpu
 
 flask api container for Keras 2.2.4
@@ -73,4 +60,17 @@ training gpu container example for Keras 2.2.4
 
 ```
 $ docker-compose up train_keras_2_2_4_gpu
+```
+
+### nginx
+
+nginx container to deploy application to web server
+
+```
+$ docker-compose up nginx
+```
+
+```
+$ curl -F "img=@./data/sample/gu/gu1.jpg" http://localhost/images
+{"result":1.0,"success":true}
 ```
