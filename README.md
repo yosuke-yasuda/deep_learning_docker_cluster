@@ -7,6 +7,18 @@
 
 ## Containers
 
+### nginx
+
+nginx container to deploy application to web server
+
+```
+$ docker-compose up nginx
+```
+
+```
+$ curl -F "img=@./data/sample/gu/gu1.jpg" http://localhost/images
+{"result":1.0,"success":true}
+```
 
 ### flask_keras_2_2_4_cpu
 

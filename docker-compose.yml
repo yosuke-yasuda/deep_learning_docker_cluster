@@ -44,3 +44,18 @@ services:
       - ./:/shared
     working_dir: /shared/train_keras_2_2_4_cpu
     command: python train.py
+  nginx:
+    image: nginx:1.16.0 
+    depends_on:
+      - flask_keras_2_2_4_cpu
+    environment:
+      - SERVER_URI=flask_keras_2_2_4_cpu
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/public:/usr/share/nginx/html
+      - ./nginx/shared:/shared
+      - ./nginx/log:/var/log/nginx/
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    command: /bin/sh -c "envsubst '$$SERVER_URI' < /shared/default_template.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
