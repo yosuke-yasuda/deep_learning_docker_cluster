@@ -68,4 +68,6 @@ services:
       - 16006:9000 # for omniboard
     volumes:
       - ./logger/mongo:/data/db
-    command: /bin/sh -c "mongod & omniboard -m 127.0.0.1:27017:train_log & tensorboard --logdir=tensorboard_logs --host=0.0.0.0"
+      - ./:/shared
+    working_dir: /shared/logger
+    command: /bin/sh -c "mongod --bind_ip 0.0.0.0 & omniboard -m 0.0.0.0:27017:train_log & tensorboard --logdir=tensorboard_logs --host=0.0.0.0"
