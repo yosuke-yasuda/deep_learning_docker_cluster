@@ -74,3 +74,15 @@ $ docker-compose up nginx
 $ curl -F "img=@./data/sample/gu/gu1.jpg" http://localhost/images
 {"result":1.0,"success":true}
 ```
+
+## logger
+
+logging container
+
+```
+$ docker-compose up logger
+```
+
+open http://localhost:6006 for tensorboard
+
+open http://localhost:16006 for omniboard
