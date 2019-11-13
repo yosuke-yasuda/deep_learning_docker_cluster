@@ -36,12 +36,14 @@ def train(input_shape, _run=None, *args, **kwargs):
         rescale=1./255,
         shear_range=0.2,
         zoom_range=0.2,
-        horizontal_flip=True)
+        horizontal_flip=True
+    )
     train_generator = datagen.flow_from_directory(
         '/shared/data/sample',
         target_size=input_shape[:2],
         batch_size=1,
-        class_mode='binary')
+        class_mode='binary'
+    )
 
     model.compile(
         loss=keras.losses.binary_crossentropy,
@@ -66,7 +68,10 @@ def train(input_shape, _run=None, *args, **kwargs):
     os.makedirs(tflog_save_path, exist_ok=True)
 
     callbacks = [
-        keras.callbacks.TensorBoard(log_dir=tflog_save_path, write_graph=False),
+        keras.callbacks.TensorBoard(
+            log_dir=tflog_save_path, 
+            write_graph=False
+        ),
         keras.callbacks.ModelCheckpoint(
             os.path.join(
                 weight_save_path,
