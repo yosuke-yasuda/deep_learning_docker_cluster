@@ -1,4 +1,4 @@
-# This is docker template for deep learning project
+# Boilerplates for Deep Learning Project
 
 ## System Requirements
 
