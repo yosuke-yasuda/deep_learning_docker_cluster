@@ -16,7 +16,7 @@ services:
     ports:
       - 8888:8888
     working_dir: /shared/notebook
-    command: jupyter notebook --ip=0.0.0.0 --allow-root --NotebookApp.token=''
+    command: jupyter lab --ip=0.0.0.0 --allow-root --NotebookApp.token=''
   jupyter_pytorch_1_0_0_gpu:
     build: jupyter_pytorch_1_0_0_gpu
     runtime: nvidia
