@@ -46,6 +46,14 @@ services:
       - ./:/shared
     working_dir: /shared/train_keras_2_2_4_cpu
     command: python train.py
+  train_tensorflow_2_0_0_cpu:
+    build: train_tensorflow_2_0_0_cpu
+    volumes:
+      - ./:/shared
+    working_dir: /shared/train_tensorflow_2_0_0_cpu
+    depends_on: 
+      - logger
+    command: python train.py
   nginx:
     image: nginx:1.16.0 
     depends_on:
