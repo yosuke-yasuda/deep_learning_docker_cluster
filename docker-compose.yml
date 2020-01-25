@@ -9,6 +9,22 @@ services:
       - ./:/shared
     working_dir: /shared/flask_keras_2_2_4_cpu
     command: python app.py
+  responder_keras:
+    build: 
+      context: responder_keras
+      dockerfile: Dockerfile-${CPU_GPU}
+      args:
+        - TENSORFLOW_VERSION=${TENSORFLOW_VERSION}
+        - KERAS_VERSION=${KERAS_VERSION}
+    ports:
+      - ${API_EXPOSE_PORT}:${API_CONTAINER_PORT}
+    env_file:
+      - .env
+    volumes:
+      - ./:/shared
+      - ./responder_keras/lib/responder/api.py:/usr/local/lib/python3.6/dist-packages/responder/api.py
+    working_dir: /shared/responder_keras
+    command: uvicorn app:api --reload --host 0.0.0.0 --port $API_CONTAINER_PORT
   jupyter_keras_2_2_4_cpu:
     build: jupyter_keras_2_2_4_cpu
     volumes:
