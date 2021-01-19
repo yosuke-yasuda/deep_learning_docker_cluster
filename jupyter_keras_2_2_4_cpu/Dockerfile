@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-# prevent 404 in apt-get update 
+# prevent 404 in apt-get update
 # ref: https://stackoverflow.com/questions/37706635/in-docker-apt-get-install-fails-with-failed-to-fetch-http-archive-ubuntu-com#answer-37708927
 RUN sed -i'' 's/archive\.ubuntu\.com/us\.archive\.ubuntu\.com/' /etc/apt/sources.list
 RUN rm -rf /var/lib/apt/lists/*
@@ -18,6 +18,11 @@ RUN apt-get update \
   && cd /usr/local/bin \
   && ln -s /usr/bin/python3 python \
   && pip3 install --upgrade pip
+
+RUN apt-get update
+RUN apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN apt-get install -y nodejs
 
 RUN pip3 install --upgrade pip
 
