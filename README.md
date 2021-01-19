@@ -26,6 +26,11 @@ $ curl -F "img=@./data/sample/gu/gu1.jpg" http://localhost:5000/images
 
 jupyter container for Keras 2.2.4
 
+#### First Setup
+```
+docker-compose run jupyter_keras_2_2_4_cpu jupyter lab build
+```
+
 ```
 $ docker-compose up jupyter_keras_2_2_4_cpu
 ```

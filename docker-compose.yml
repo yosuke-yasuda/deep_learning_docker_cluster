@@ -10,7 +10,7 @@ services:
     working_dir: /shared/flask_keras_2_2_4_cpu
     command: python app.py
   responder_keras:
-    build: 
+    build:
       context: responder_keras
       dockerfile: Dockerfile-${CPU_GPU}
       args:
@@ -29,6 +29,7 @@ services:
     build: jupyter_keras_2_2_4_cpu
     volumes:
       - ./:/shared
+      - ./jupyterlab_data/:/usr/local/share/jupyter/lab/
     ports:
       - 8888:8888
     working_dir: /shared/notebook
