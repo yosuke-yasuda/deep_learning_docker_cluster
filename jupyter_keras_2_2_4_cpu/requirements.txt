@@ -1,5 +1,5 @@
 jupyterlab==1.2.3
-Pillow==6.0.0
+Pillow==9.0.1
 tensorflow==1.9.0
 Keras==2.2.4
 sacred==0.8.0
