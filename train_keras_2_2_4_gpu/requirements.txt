@@ -1,4 +1,4 @@
-Pillow==6.0.0
+Pillow==9.0.1
 Keras==2.2.4
 sacred==0.8.0
 pymongo==3.9.0
