@@ -1,4 +1,4 @@
 flask==1.0.2
 Pillow==6.0.0
-tensorflow==1.9.0
+tensorflow==2.6.4
 Keras==2.2.4
